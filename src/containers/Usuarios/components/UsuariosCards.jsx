@@ -14,6 +14,7 @@ function UsuariosCards() {
         {usuarios.usuarios?.map((usuario, index) => {
           return (
             <CustomCards
+              efectoCss={true}
               key={index}
               cardTitle={`Usuario: ${usuario.first_name} ${usuario.last_name}`}
               cardText={`Email: ${usuario.email}`}

@@ -7,7 +7,7 @@ function CustomCards(props) {
       <div>
         <div className="col" >
           <div
-            className="card"
+            className={props.efectoCss ? "card" : ""}
             style={{
               margin: 'auto',
               maxWidth: "300px",
