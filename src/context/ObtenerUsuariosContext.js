@@ -1,27 +1,17 @@
-import { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import { createContext, useReducer} from "react";
+import reducer from "../reducers/Usuarios/reducer";
 
-const ObtenerUsuariosContext = createContext();
+const UsuariosContext = createContext();
 
-const ObtenerUsuariosContextProvider = ({ children }) => {
-  const [usuarios, setUsuarios] = useState();
+const UsuariosContextProvider = ({ children }) => {
 
-  useEffect(() => {
-    axios
-      .get(`https://reqres.in/api/users?page=1`)
-      .then((data) => {
-        setUsuarios(data.data.data);
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  }, []);
+  const [usuarios, dispatch] = useReducer(reducer, []);
 
   return (
-    <ObtenerUsuariosContext.Provider value={usuarios}>
+    <UsuariosContext.Provider value={{usuarios, dispatch}}>
       {children}
-    </ObtenerUsuariosContext.Provider>
+    </UsuariosContext.Provider>
   );
 };
 
-export { ObtenerUsuariosContext, ObtenerUsuariosContextProvider };
+export { UsuariosContext, UsuariosContextProvider };

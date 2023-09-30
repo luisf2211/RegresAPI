@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import CustomCards from "../../../components/CustomCards/CustomCards";
 import { ORGANIZAR_COLUMNAS_CARDS } from "../utils/stylesUtils";
-import { ObtenerUsuariosContext } from "../../../context/ObtenerUsuariosContext";
+import { UsuariosContext } from "../../../context/ObtenerUsuariosContext";
+import PaginationCards from "./PaginationCards";
 
 function UsuariosCards() {
-  const usuarios = useContext(ObtenerUsuariosContext);
+  const { usuarios } = useContext(UsuariosContext);
 
   return (
-    <div>
+    <div style={{marginBottom: '10px'}} >
+      <PaginationCards />
       <div className={ORGANIZAR_COLUMNAS_CARDS} style={{ margin: "20px" }}>
-        {usuarios?.map((usuario, index) => {
+        {usuarios.usuarios?.map((usuario, index) => {
           return (
             <CustomCards
               key={index}
