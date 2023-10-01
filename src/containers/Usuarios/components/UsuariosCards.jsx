@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import CustomCards from "../../../components/CustomCards/CustomCards";
 import { ORGANIZAR_COLUMNAS_CARDS } from "../utils/stylesUtils";
-import { UsuariosContext } from "../../../context/ObtenerUsuariosContext";
+import { UsuariosContext } from "../../../context/UsuariosContextProvider";
 import PaginationCards from "./PaginationCards";
 
 function UsuariosCards() {

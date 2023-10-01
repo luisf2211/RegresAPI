@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UsuariosContext } from "../../../context/ObtenerUsuariosContext";
+import { UsuariosContext } from "../../../context/UsuariosContextProvider";
 import axios from "axios";
 
 function PaginationCards() {
